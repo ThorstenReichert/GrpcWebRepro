@@ -1,0 +1,9 @@
+﻿syntax = "proto3";
+
+package Test;
+
+message Empty {}
+
+service TestService {
+	rpc TestStream(Empty) returns (stream Empty);
+}
