@@ -1,5 +1,15 @@
 # GrpcWebRepro
+## Solution
+In appsettings.json, change
+```json
+{ "Kestrel": { "EndpointDefaults": { "Protocols": "Http2" }}}
+```
+to
+```json
+{ "Kestrel": { "EndpointDefaults": { "Protocols": "Http1AndHttp2" }}}
+```
 
+## Issue
 Issue when calling a .NET 5.0 gRPC server from a .NET 4.8 or netcoreapp 3.1 gRPC.Web client. When using .NET 5.0 on the client, everything works as expected.
 
 Error message (.NET 4.8 client)
